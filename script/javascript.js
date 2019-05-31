@@ -1,0 +1,125 @@
+// instagram field
+let request = new XMLHttpRequest();
+request.open('GET', 'https://api.instagram.com/v1/users/self/media/recent/?access_token=1520419039.390f162.e291d022972843ce826ce82f9005f6ab&count=13', true);
+
+request.onload = function () {
+    if (request.status >= 200 && request.status < 400) {
+        let data = JSON.parse(request.responseText);
+        for (let i = 9; i < data.data.length; i++) {
+            //elements for data
+            let container = document.getElementById('instagram-feed');
+            let cards = document.createElement('div');
+            let accountImg = document.createElement('img');
+            let accountName = document.createElement('h4');
+            let open = document.createElement('a');
+            let img = document.createElement('img');
+            let likes = document.createElement('p');
+            let comments = document.createElement('p');
+            let imgURL = data.data[i].images.standard_resolution.url;
+            let openURL = (data.data[i].link);
+
+            //styles
+            accountImg.style.width = '11%';
+            accountImg.style.margin = '0 10px -10px 0';
+            accountImg.style.clipPath = 'circle(40%)';
+            accountImg.style.display = 'inline-block';
+            accountName.style.marginBottom = '20px';
+            accountName.style.display = 'inline-block';
+            accountName.style.fontWeight = '600';
+            comments.style.cssFloat = 'right';
+
+            container.setAttribute('class', 'cards');
+            cards.setAttribute('class', 'instapic');
+            accountImg.setAttribute('src', data.data[i].user.profile_picture);
+            accountImg.setAttribute('alt', 'profile picture');
+            open.setAttribute('href', openURL);
+            img.setAttribute('src', imgURL);
+            img.setAttribute('alt', 'instagram image');
+            accountName.textContent = (data.data[i].user.username);
+            likes.textContent = ('♥ ' + data.data[i].likes.count);
+            comments.textContent = ('🗨 ' + data.data[i].comments.count);
+
+            //appends data to page
+            container.appendChild(cards);
+            cards.appendChild(accountImg);
+            cards.appendChild(accountName);
+            cards.appendChild(open);
+            open.appendChild(img);
+            cards.appendChild(likes);
+            cards.appendChild(comments);
+        }
+    }
+};
+
+request.send();
+
+
+// Newsletter mailchimp 
+document.getElementById("submitButton").addEventListener("click", sumbit);
+function sumbit() {
+    let email = document.getElementById("email").value;
+
+    let regExpEmail = /^[a-zA-Z0-9-._]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
+
+    let validEmail = email.match(regExpEmail);
+
+    if (validEmail) {
+        window.open('https://mailchi.mp/8f697d71c85c/project-exam', '_blank');
+    } else {
+        let error = document.getElementById('error');
+        error.style.display = "block";
+    }
+}
+
+// Hamburger menu
+let modal = document.getElementById('myModal');
+let hamburger = document.getElementById('pointer');
+let close = document.getElementById('close');
+hamburger.onclick = function () {
+    modal.style.display = 'block';
+}
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+window.addEventListener('keydown', function (e) {
+    if (e.keyCode == 27) {
+        modal.style.display = 'none';
+    }
+})
+close.onclick = function () {
+    modal.style.display = "none";
+}
+
+// Change color on hamburger menu on scroll
+window.onscroll = function () {
+    if (window.pageYOffset < 880) {
+        document.getElementById('menu-text').style.color = "#fff";
+        document.getElementById('topnav').style.background = "transparent";
+        document.getElementById('topnav').style.width = "100%";
+        document.getElementById("bar1").style.background = "#f5f5f5";
+        document.getElementById("bar2").style.background = "#f5f5f5";
+        document.getElementById("bar3").style.background = "#f5f5f5";
+    } else {
+        document.getElementById('menu-text').style.color = "#0f0f0f";
+        document.getElementById('topnav').style.background = "#ffffff";
+        document.getElementById('topnav').style.width = "100%";
+        document.getElementById("bar1").style.background = "#0f0f0f";
+        document.getElementById("bar2").style.background = "#0f0f0f";
+        document.getElementById("bar3").style.background = "#0f0f0f";
+    }
+}
+
+// Fit menu to width on mobile
+let mobile = window.matchMedia("(max-width: 500px)");
+mobile.addListener(fitScreen);
+function fitScreen(mobile) {
+    if (mobile.matches) {
+        document.getElementById('fitMobile').style.width = "100%";
+    } else {
+        document.getElementById('fitMobile').style.width = "300px";
+    }
+}
+
+fitScreen(mobile);
