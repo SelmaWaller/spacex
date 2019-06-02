@@ -20,8 +20,8 @@
     <nav>
         <div class="top-navigation-line" id="topnav">
             <div class="hamburger" id="hamburger"></div>
-            <div class="shadow" id="myModal">
-                <div class="modal-content" id="fitMobile">
+            <div class="open-menu-background" id="openMenu">
+                <div class="menu-content" id="fitMobile">
                     <div id="close">
                         <h2>CLOSE</h2>
                         <div class="close-bar1"></div>
@@ -211,14 +211,14 @@
                         <div class="footer-newsletter">
                             <div class="col-6">
                                 <div class="footer-newsletter-section">
-                                    <div id="error">
-                                        <p>*Invalid email</p>
-                                    </div>
                                     <form>
                                         <label for="newsletterEmail">Join our newsletter</label>
+                                        <div id="error">
+                                            <p>*Invalid email</p>
+                                        </div>
                                         <input class="footer-email-input" id="newsletterEmail" type="email"
                                             placeholder="Enter email address">
-                                        <button id="submitButton">Sign up</button>
+                                        <button id="submitButton"><a href="#submitButton">Sign up</a></button>
                                     </form>
                                 </div>
                                 <div class="footer-media">

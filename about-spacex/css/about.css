@@ -8,7 +8,7 @@ body {
     background: #0f0f0f;
 }
 
-.modal-content {
+.menu-content {
     background: #f5f5f5;
 }
 
@@ -17,12 +17,12 @@ body {
     background: #0f0f0f;
 }
 
-.modal-content h2,
-.modal-content a {
+.menu-content h2,
+.menu-content a {
     color: #0f0f0f;
 }
 
-.modal-content a:hover {
+.menu-content a:hover {
     color: #00b688;
 }
 

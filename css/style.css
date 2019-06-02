@@ -65,7 +65,7 @@ body {
     margin-left: -90px;
 }
 
-.modal-content h2  {
+.menu-content h2  {
     font-size: 1.8em;
     color: #fff;
     float: left;
@@ -73,7 +73,7 @@ body {
     margin-left: -90px;
 }
 
-.modal-content h2 {
+.menu-content h2 {
     margin-top: 13px;
 }
 
@@ -131,7 +131,7 @@ body {
 
 /* hamburger menu */
 
-.shadow {
+.open-menu-background {
     display: none;
     width: 100%;
     height: 100%;
@@ -156,7 +156,7 @@ body {
     cursor: pointer;
 }
 
-.modal-content {
+.menu-content {
     width: 300px;
     height: 100%;
     background: #0f0f0f;
@@ -165,7 +165,7 @@ body {
     overflow: auto;
 }
 
-.modal-content ul {
+.menu-content ul {
     padding: 80px 0 0 0;
     margin: 0 auto;
     text-align: center;
@@ -173,24 +173,24 @@ body {
     font-size: 2em;
 }
 
-.modal-content li {
+.menu-content li {
     padding: 20px 0 20px 0;
 }
 
-.modal-content li:nth-child(1) {
+.menu-content li:nth-child(1) {
     margin-top: 40px;
 }
 
-.modal-content a {
+.menu-content a {
     text-decoration: none;
     color: #fff;
 }
 
-.modal-content a:hover {
+.menu-content a:hover {
     color: #02d8a2;
 }
 
-.modal-content a:active {
+.menu-content a:active {
     color: #00b88a;
 }
 
@@ -207,7 +207,7 @@ body {
   margin-bottom: 0;
 }
 
-.modal-content p {
+.menu-content p {
     text-align: center;
     padding: 20px 30px 0 30px;
     margin-top: 0;
@@ -859,6 +859,19 @@ body {
     font-weight: bold;
 }
 
+.footer-newsletter button a {
+    text-decoration: none;
+    color: #0f0f0f;
+}
+
+.footer-newsletter button a:hover {
+    color: #0f0f0f;
+}
+
+.footer-newsletter button a:hover {
+    color: #0f0f0f;
+}
+
 .footer-newsletter button:hover {
     background: #00b88a;
 }
@@ -1086,7 +1099,7 @@ body {
         margin-bottom: 80px;
     }
 
-    .modal-content,
+    .menu-content,
     .pointer {
         padding-right: 0;
     }

@@ -55,41 +55,46 @@ request.send();
 
 
 // Newsletter mailchimp 
-document.getElementById("submitButton").addEventListener("click", sumbit);
+joinNewsletter = document.getElementById("submitButton").addEventListener("click", sumbit);
 function sumbit() {
     let email = document.getElementById("newsletterEmail").value;
-
     let regExpEmail = /^[a-zA-Z0-9-._]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
-
     let validEmail = email.match(regExpEmail);
+    let error = document.getElementById('error');
 
     if (validEmail) {
         window.open('https://mailchi.mp/33d723a05938/spacex-newsletter', '_blank');
-    } else {
-        let error = document.getElementById('error');
+        error.style.display = "none";
+    }
+
+    if (validEmail != email.match(regExpEmail)) {
+        return false;
+    }
+
+    else {
         error.style.display = "block";
     }
 }
 
 // Hamburger menu
-let modal = document.getElementById('myModal');
+let openMenu = document.getElementById('openMenu');
 let hamburger = document.getElementById('pointer');
 let close = document.getElementById('close');
 hamburger.onclick = function () {
-    modal.style.display = 'block';
+    openMenu.style.display = 'block';
 }
 window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
+    if (event.target == openMenu) {
+        openMenu.style.display = 'none';
     }
 }
 window.addEventListener('keydown', function (e) {
     if (e.keyCode == 27) {
-        modal.style.display = 'none';
+        openMenu.style.display = 'none';
     }
 })
 close.onclick = function () {
-    modal.style.display = "none";
+    openMenu.style.display = "none";
 }
 
 // Change color on hamburger menu on scroll
