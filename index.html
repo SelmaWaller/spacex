@@ -112,84 +112,93 @@
     </header>
 
     <!-- main content -->
-    <!-- News -->
     <main>
         <div class="container-main">
-            <div class="main-content-titles">
-                <h2>Latest updates</h2>
-            </div>
-            <div class="cards">
-                <div class="card-article news-article">
-                    <video autoplay loop muted>
-                        <source src="videos/reusability-comp.mp4" type="video/mp4" style="width: 100%;">
-                    </video>
-                    <h2><a href="https://www.spacex.com/news/2013/03/31/reusability-key-making-human-life-multi-planetary"
-                            target="_self">REUSABILITY: WORLD’S FIRST REFLIGHT OF AN ORBITAL CLASS ROCKET</a></h2>
-                    <p><a href="https://www.instagram.com/explore/tags/spacex/" target="_blank">Read more → </a></p>
+            <section>
+                <!-- News -->
+                <div class="main-content-titles">
+                    <h3>Latest updates</h3>
                 </div>
-
-                <div class="card-article">
-                    <div class="news-article">
+                <div class="cards">
+                    <div class="card-article news-article">
                         <video autoplay loop muted>
-                            <source src="videos/crew-dragon-comp.mp4" type="video/mp4" style="width: 100%;">
+                            <source src="videos/reusability-comp.mp4" type="video/mp4" style="width: 100%;">
                         </video>
-                        <h2><a href="https://www.spacex.com/crew-dragon" target="_self">COMMERCIAL CREW: TAKING
-                                AMERICA’S
-                                ASTRONAUTS TO SPACE</a></h2>
-                        <p><a href="https://www.instagram.com/explore/tags/spacex/" target="_blank">Read more → </a></p>
+                        <h4><a href="https://www.spacex.com/news/2013/03/31/reusability-key-making-human-life-multi-planetary"
+                                target="_self">REUSABILITY: WORLD’S FIRST REFLIGHT OF AN ORBITAL CLASS ROCKET</a></h4>
+                        <p><a href="https://www.spacex.com/news/2013/03/31/reusability-key-making-human-life-multi-planetary"
+                                target="_self">Read more → </a></p>
+                    </div>
+
+                    <div class="card-article">
+                        <div class="news-article">
+                            <video autoplay loop muted>
+                                <source src="videos/crew-dragon-comp.mp4" type="video/mp4" style="width: 100%;">
+                            </video>
+                            <h4><a href="https://www.spacex.com/crew-dragon" target="_self">COMMERCIAL CREW: TAKING
+                                    AMERICA’S
+                                    ASTRONAUTS TO SPACE</a></h4>
+                            <p><a href="https://www.spacex.com/crew-dragon" target="_self">Read more → </a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card-article">
+                        <div class="news-article">
+                            <video autoplay loop muted>
+                                <source src="videos/multiplanetary-comp.mp4" type="video/mp4" style="width: 100%;">
+                            </video>
+                            <h4><a href="https://www.spacex.com/mars" target="self">MAKING LIFE MULTIPLANETARY</a></h4>
+                            <p><a href="https://www.spacex.com/mars" target="_self">Read more → </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="card-article">
-                    <div class="news-article">
-                        <video autoplay loop muted>
-                            <source src="videos/multiplanetary-comp.mp4" type="video/mp4" style="width: 100%;">
-                        </video>
-                        <h2><a href="https://www.spacex.com/mars" target="self">MAKING LIFE MULTIPLANETARY</a></h2>
-                        <p><a href="https://www.instagram.com/explore/tags/spacex/" target="_blank">Read more → </a></p>
+            <section>
+                <!-- Twitter -->
+                <div class="main-content-titles">
+                    <h3>Recent twitter posts from SpaceX, Elon Musk and NASA</h3>
+                </div>
+                <div class="cards">
+                    <div class="card-article tweet">
+                        <a class="twitter-timeline" href="https://twitter.com/spacex" data-tweet-limit="2">
+                            Newest tweets by @SpaceX</a>
+                        <script async src="//platform.twitter.com/widgets.js"></script>
+                    </div>
+
+                    <div class="card-article tweet">
+                        <a class="twitter-timeline" href="https://twitter.com/elonmusk" data-tweet-limit="2">
+                            Newest tweets by @elonmusk</a>
+                        <script async src="//platform.twitter.com/widgets.js"></script>
+                    </div>
+
+                    <div class="card-article tweet">
+                        <a class="twitter-timeline" href="https://twitter.com/nasa" data-tweet-limit="1">
+                            Newest tweets by @NASA</a>
+                        <script async src="//platform.twitter.com/widgets.js"></script>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <!-- Twitter -->
-            <div class="main-content-titles">
-                <h2>Recent twitter posts from SpaceX, Elon Musk and NASA</h2>
-            </div>
-            <div class="cards">
-                <div class="card-article tweet">
-                    <a class="twitter-timeline" href="https://twitter.com/spacex" data-tweet-limit="2">
-                        Newest tweets by @SpaceX</a>
-                    <script async src="//platform.twitter.com/widgets.js"></script>
+            <section>
+                <!-- Instagram -->
+                <div class="main-content-titles">
+                    <h3 id="instagram-title"><a href="https://www.instagram.com/explore/tags/spacex/"
+                            target="_blank">#SpaceX on
+                            Instagram</a>
+                    </h3>
                 </div>
-
-                <div class="card-article tweet">
-                    <a class="twitter-timeline" href="https://twitter.com/elonmusk" data-tweet-limit="2">
-                        Newest tweets by @elonmusk</a>
-                    <script async src="//platform.twitter.com/widgets.js"></script>
+                <div id="instagram-feed"></div>
+                <div class="cards">
+                    <div class="instagram-link">
+                        <p><a href="https://www.instagram.com/explore/tags/spacex/" target="_blank">See all tagged
+                                photos →
+                            </a></p>
+                    </div>
                 </div>
-
-                <div class="card-article tweet">
-                    <a class="twitter-timeline" href="https://twitter.com/nasa" data-tweet-limit="1">
-                        Newest tweets by @NASA</a>
-                    <script async src="//platform.twitter.com/widgets.js"></script>
-                </div>
-            </div>
-
-
-            <!-- Instagram -->
-            <div class="main-content-titles">
-                <h2><a href="https://www.instagram.com/explore/tags/spacex/" target="_blank">#SpaceX on
-                        Instagram</a>
-                </h2>
-            </div>
-            <div id="instagram-feed"></div>
-            <!-- instagram info added in script -->
-            <div class="cards">
-                <div class="instagram-link">
-                    <p><a href="https://www.instagram.com/explore/tags/spacex/" target="_blank">See all tagged photos →
-                        </a></p>
-                </div>
-            </div>
+            </section>
         </div>
     </main>
 
@@ -202,12 +211,12 @@
                         <div class="footer-newsletter">
                             <div class="col-6">
                                 <div class="footer-newsletter-section">
-                                    <h2>Newsletter</h2>
                                     <div id="error">
                                         <p>*Invalid email</p>
                                     </div>
                                     <form>
-                                        <input class="footer-email-input" id="email" type="email"
+                                        <label for="newsletterEmail">Join our newsletter</label>
+                                        <input class="footer-email-input" id="newsletterEmail" type="email"
                                             placeholder="Enter email address">
                                         <button id="submitButton">Sign up</button>
                                     </form>
