@@ -140,6 +140,10 @@ video {
     
 @media only screen and (max-width: 800px) {
 /* tablet responsive */
+    .mobile {
+        display: block;
+    }   
+
     .section-background h1 {
         font-size: 4em;
     }
