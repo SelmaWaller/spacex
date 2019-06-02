@@ -295,17 +295,19 @@ async function getLaunches() {
 getLaunches();
 
 // Newsletter mailchimp 
-document.getElementById('submitButton').addEventListener('click', sumbit);
+document.getElementById("submitButton").addEventListener("click", sumbit);
 function sumbit() {
-    let email = document.getElementById('email').value;
+    let email = document.getElementById("newsletterEmail").value;
+
     let regExpEmail = /^[a-zA-Z0-9-._]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
+
     let validEmail = email.match(regExpEmail);
 
     if (validEmail) {
-        window.open('https://mailchi.mp/8f697d71c85c/project-exam', '_blank');
+        window.open('https://mailchi.mp/33d723a05938/spacex-newsletter', '_blank');
     } else {
         let error = document.getElementById('error');
-        error.style.display = 'block';
+        error.style.display = "block";
     }
 }
 
