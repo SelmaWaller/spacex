@@ -203,6 +203,19 @@ iframe {
         margin-bottom: 0;
     }
 
+    .header-text #upcoming-launches,
+    .videos h2 {
+        font-size: 1.6em;
+    }
+
+    .videos h2 {
+        padding-top: 30px;
+    }
+
+    #upcoming-launches {
+        padding-top: 50px;
+    }
+
     .section-background h1 {
         top: 30%;
     }
