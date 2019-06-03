@@ -28,7 +28,7 @@ request.onload = function () {
             accountName.style.fontWeight = '600';
             comments.style.cssFloat = 'right';
 
-            container.setAttribute('class', 'cards');
+            container.setAttribute('class', 'instagram-cards');
             cards.setAttribute('class', 'instapic');
             accountImg.setAttribute('src', data.data[i].user.profile_picture);
             accountImg.setAttribute('alt', 'profile picture');
