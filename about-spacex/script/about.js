@@ -74,7 +74,7 @@ function verifyPhone() {
 
 function verifyText() {
     let text = document.getElementById('textField').value;
-    let regExpText = /^.{1,}$/;
+    let regExpText = /^.{20,}$/;
     let textError = document.getElementById('textFieldError');
     if (text.match(regExpText)) {
         textError.style.display = 'none';
@@ -89,6 +89,16 @@ document.getElementById('formSubmit').addEventListener('click', function () {
     if (verifyFirstName() && verifyEmail() && verifyText()) {
         document.getElementById('questionReceived').style.display = 'block';
         return true;
+    }
+    if (!verifyFirstName() && !verifyEmail() && !verifyText()) {
+        nameError.style.display = 'block';
+        emailError.style.display = 'block';
+        textError.style.display = 'block';
+        return false;
+    }
+    if (verifyFirstName() && !verifyEmail() && verifyText()) {
+        emailError.style.display = 'block';
+
     } else {
         document.getElementById('questionReceived').style.display = 'none';
         return false;
