@@ -1,4 +1,4 @@
-// Change background on scroll
+/*----------Change color on hamburger menu on scroll----------*/
 window.onscroll = function () {
     if (window.pageYOffset < 300) {
         document.getElementById('topnav').style.background = 'transparent';

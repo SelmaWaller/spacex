@@ -1,6 +1,6 @@
-// Change color on hamburger menu on scroll
+/*----------Change color on hamburger menu on scroll----------*/
 window.onscroll = function () {
-    if (window.pageYOffset < 1) {
+    if (window.pageYOffset < 1) { //change styles of window is scrolled past this value
         document.getElementById('menu-text').style.color = "#f5f5f5";
         document.getElementById('topnav').style.background = "transparent";
         document.getElementById('topnav').style.width = "100%";
@@ -17,7 +17,7 @@ window.onscroll = function () {
     }
 }
 
-// Contact form validation
+/*----------Contact form validation----------*/
 let submit = document.getElementById('formSubmit');
 
 function verifyFirstName() {
@@ -90,7 +90,7 @@ document.getElementById('formSubmit').addEventListener('click', function () {
         document.getElementById('questionReceived').style.display = 'block';
         return true;
     }
-    if (!verifyFirstName() && !verifyEmail() && !verifyText()) {
+    if (!verifyFirstName() && !verifyEmail() && !verifyText()) { //show error msg if fields are empty
         nameError.style.display = 'block';
         emailError.style.display = 'block';
         textError.style.display = 'block';

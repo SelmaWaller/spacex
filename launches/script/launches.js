@@ -1,6 +1,27 @@
-// Change background on scroll
+/*----------Hamburger menu----------*/
+let openMenu = document.getElementById('openMenu');
+let hamburger = document.getElementById('pointer');
+let close = document.getElementById('close');
+hamburger.onclick = function () {
+    openMenu.style.display = 'block';
+}
+window.onclick = function (closeMenu) {
+    if (closeMenu.target == openMenu) { //closes menu if window is clicked
+        openMenu.style.display = 'none';
+    }
+}
+window.addEventListener('keydown', function (e) { //closes menu with ESC
+    if (e.keyCode == 27) {
+        openMenu.style.display = 'none';
+    }
+})
+close.onclick = function () { //closes menu if hamburger inside menu is clicked
+    openMenu.style.display = "none";
+}
+
+/*----------Change color on hamburger menu on scroll----------*/
 window.onscroll = function () {
-    if (window.pageYOffset < 300) {
+    if (window.pageYOffset < 300) { //change styles of window is scrolled past this value
         document.getElementById('topnav').style.background = 'transparent';
         document.getElementById('menu-text').style.textShadow = '2px 2px 10px #9e9091df';
         document.getElementById('bar1').style.boxShadow = '2px 2px 10px #9e9091df';
@@ -15,7 +36,7 @@ window.onscroll = function () {
     }
 }
 
-// Upcoming launches
+/*----------Upcoming launches----------*/
 
 //fetching API
 let launches_api = 'https://api.spacexdata.com/v3/launches/upcoming';
@@ -23,13 +44,13 @@ async function getLaunches() {
     let response = await fetch(launches_api);
     let data = await response.json();
 
-    //creating cards for each upcoming launch
+    //creating DOM for each upcoming launch
     let container = document.getElementById('launches');
     let eachCard = document.createElement('div');
     let eachCard2 = document.createElement('div');
     let eachCard3 = document.createElement('div');
 
-    //class name for cards
+    //set class names for cards
     container.setAttribute('class', 'cards');
     eachCard.setAttribute('class', 'launch-cards');
     eachCard2.setAttribute('class', 'launch-cards');
@@ -56,8 +77,9 @@ async function getLaunches() {
 
     //fetching each obj in data
     for (let obj in data) {
-        //first upcoming launch
-        //title and external video card 1
+
+        //first upcoming launch:
+        //title and external video for launch 1
         let rocketName = document.createElement('h2');
         let video1 = document.createElement('video');
         video1.setAttribute('src', 'https://wallerweave.com/project-exam/videos/launch1-comp.mp4');
@@ -70,7 +92,7 @@ async function getLaunches() {
         eachCard.appendChild(video1)
         video1.style.width = '100%';
 
-        //date/time card 1
+        //date/time for launch 1
         let launchTimeTxt = document.createElement('p');
         let launchTime = document.createElement('p');
         launchTimeTxt.textContent = ('Launch date (local):');
@@ -79,12 +101,12 @@ async function getLaunches() {
         eachCard.appendChild(launchTime);
         launchTimeTxt.style.margin = '10px 0 0 0';
 
-        //launch site card 1
+        //launch site for launch 1
         let launchSite = document.createElement('p');
         launchSite.textContent = (data.slice(0, 1)[obj].launch_site.site_name_long);
         eachCard.appendChild(launchSite);
 
-        // open details accordion card 1
+        // open details accordion for launch 1
         let readMore = document.createElement('button');
         let details = document.createElement('p');
         let emptyDetails = document.createElement('p');
@@ -95,14 +117,14 @@ async function getLaunches() {
         details.textContent = (data.slice(0, 1)[obj].details);
         emptyDetails.textContent = ('No details for this mission'); //if details in data is null
 
-        //close details accordion card 1
+        //close details accordion for launch 1
         let hideDetails = document.createElement('button');
         hideDetails.setAttribute('class', 'readMore');
         hideDetails.textContent = ('Hide details');
         hideDetails.style.display = 'none';
         readMore.style.display = 'block';
 
-        //style and append accordion card 1
+        //style and append accordion to launch 1
         details.style.display = 'none';
         emptyDetails.style.display = 'none';
         eachCard.appendChild(readMore);
@@ -110,7 +132,7 @@ async function getLaunches() {
         eachCard.appendChild(details);
         eachCard.appendChild(emptyDetails);
 
-        //function open accordion card 1
+        //function open accordion in launch 1
         readMore.addEventListener('click', showDetailsButton);
         function showDetailsButton() {
             readMore.style.display = 'none';
@@ -123,7 +145,7 @@ async function getLaunches() {
             }
         }
 
-        //function close accordion card 1
+        //function close accordion in launch 1
         hideDetails.addEventListener('click', hideDetailsButton);
         function hideDetailsButton() {
             hideDetails.style.display = 'none';
@@ -131,8 +153,8 @@ async function getLaunches() {
             details.style.display = 'none';
         }
 
-        // second upcoming launch
-        //title and external video card 2
+        // second upcoming launch:
+        //title and external video for launch 2
         let rocketName2 = document.createElement('h2');
         let video2 = document.createElement('video');
         video2.setAttribute('src', 'https://wallerweave.com/project-exam/videos/launch2-comp.mp4');
@@ -145,7 +167,7 @@ async function getLaunches() {
         eachCard2.appendChild(video2)
         video2.style.width = '100%';
 
-        //date/time card 2
+        //date/time for launch 2
         let launchTimeTxt2 = document.createElement('p');
         let launchTime2 = document.createElement('p');
         launchTimeTxt2.textContent = ('Launch date (local):');
@@ -154,12 +176,12 @@ async function getLaunches() {
         eachCard2.appendChild(launchTime2);
         launchTimeTxt2.style.margin = '10px 0 0 0';
 
-        //launch site card 2
+        //launch site for launch 2
         let launchSite2 = document.createElement('p');
         launchSite2.textContent = (data.slice(1, 2)[obj].launch_site.site_name_long);
         eachCard2.appendChild(launchSite2);
 
-        // open details accordion card 2
+        // open details accordion for launch 2
         let readMore2 = document.createElement('button');
         let details2 = document.createElement('p');
         let emptyDetails2 = document.createElement('p');
@@ -175,14 +197,14 @@ async function getLaunches() {
         eachCard2.appendChild(details2);
         eachCard2.appendChild(emptyDetails2);
 
-        //close details accordion card 2
+        //close details accordion for launch 2
         let hideDetails2 = document.createElement('button');
         hideDetails2.setAttribute('class', 'readMore');
         hideDetails2.textContent = ('Hide details');
         hideDetails2.style.display = 'none';
         readMore2.style.display = 'block';
 
-        //style and append accordion card 2
+        //style and append accordion to launch 2
         details2.style.display = 'none';
         emptyDetails2.style.display = 'none';
         eachCard2.appendChild(readMore2);
@@ -190,7 +212,7 @@ async function getLaunches() {
         eachCard2.appendChild(details2);
         eachCard2.appendChild(emptyDetails2);
 
-        //function open accordion card 1
+        //function open accordion in launch 2
         readMore2.addEventListener('click', showDetailsButton2);
         function showDetailsButton2() {
             readMore2.style.display = 'none';
@@ -202,7 +224,7 @@ async function getLaunches() {
             }
         }
 
-        //function close accordion card 2
+        //function close accordion in launch 2
         hideDetails2.addEventListener('click', hideDetailsButton2);
         function hideDetailsButton2() {
             hideDetails2.style.display = 'none';
@@ -211,7 +233,7 @@ async function getLaunches() {
             emptyDetails2.style.display = 'none';
         }
         // third upcoming launch
-        //title and external video card 3
+        //title and external video for launch 3
         let rocketName3 = document.createElement('h2');
         let video3 = document.createElement('video');
         video3.setAttribute('src', 'https://wallerweave.com/project-exam/videos/multiplanetary-comp.mp4');
@@ -224,7 +246,7 @@ async function getLaunches() {
         eachCard3.appendChild(video3)
         video3.style.width = '100%';
 
-        //date/time card 3
+        //date/time for launch 3
         let launchTimeTxt3 = document.createElement('p');
         let launchTime3 = document.createElement('p');
         launchTimeTxt3.textContent = ('Launch date (local):');
@@ -233,12 +255,12 @@ async function getLaunches() {
         eachCard3.appendChild(launchTime3);
         launchTimeTxt3.style.margin = '10px 0 0 0';
 
-        //launch site card 3
+        //launch site for launch 3
         let launchSite3 = document.createElement('p');
         launchSite3.textContent = (data.slice(2, 3)[obj].launch_site.site_name_long);
         eachCard3.appendChild(launchSite3);
 
-        // open details accordion card 3
+        // open details accordion for launch 3
         let readMore3 = document.createElement('button');
         let details3 = document.createElement('p');
         let emptyDetails3 = document.createElement('p');
@@ -254,14 +276,14 @@ async function getLaunches() {
         eachCard3.appendChild(details3);
         eachCard3.appendChild(emptyDetails3);
 
-        //close details accordion card 3
+        //close details accordion for launch 3
         let hideDetails3 = document.createElement('button');
         hideDetails3.setAttribute('class', 'readMore');
         hideDetails3.textContent = ('Hide details');
         hideDetails3.style.display = 'none';
         readMore3.style.display = 'block';
 
-        //style and append accordion card 3
+        //style and append accordion to launch 3
         details3.style.display = 'none';
         emptyDetails3.style.display = 'none';
         eachCard3.appendChild(readMore3);
@@ -269,7 +291,7 @@ async function getLaunches() {
         eachCard3.appendChild(details3);
         eachCard3.appendChild(emptyDetails3);
 
-        //function open accordion card 3
+        //function open accordion in launch 3
         readMore3.addEventListener('click', showDetailsButton3);
         function showDetailsButton3() {
             readMore3.style.display = 'none';
@@ -281,7 +303,7 @@ async function getLaunches() {
             }
         }
 
-        //function close accordion card 3
+        //function close accordion in launch 3
         hideDetails3.addEventListener('click', hideDetailsButton3);
         function hideDetailsButton3() {
             hideDetails3.style.display = 'none';
@@ -291,10 +313,10 @@ async function getLaunches() {
         }
     }
 }
-//run and display api
+//run launches
 getLaunches();
 
-// Newsletter mailchimp 
+/*----------Newsletter mailchimp----------*/
 joinNewsletter = document.getElementById("submitButton").addEventListener("click", sumbit);
 function sumbit() {
     let email = document.getElementById("newsletterEmail").value;
@@ -316,28 +338,7 @@ function sumbit() {
     }
 }
 
-// Hamburger menu
-let openMenu = document.getElementById('openMenu');
-let hamburger = document.getElementById('pointer');
-let close = document.getElementById('close');
-hamburger.onclick = function () {
-    openMenu.style.display = 'block';
-}
-window.onclick = function (event) {//click outside menu to close
-    if (event.target == openMenu) {
-        openMenu.style.display = 'none';
-    }
-}
-window.addEventListener('keydown', function (e) {
-    if (e.keyCode == 27) { //esc to close
-        openMenu.style.display = 'none';
-    }
-})
-close.onclick = function () {
-    openMenu.style.display = 'none';
-}
-
-// Fit menu to width on mobile
+/*----------Fit menu to width on mobile----------*/
 let mobile = window.matchMedia('(max-width: 500px)');
 mobile.addListener(fitScreen);
 function fitScreen(mobile) {
