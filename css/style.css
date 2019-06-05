@@ -1024,6 +1024,7 @@ body {
         font-size: 1.3em;
         padding: 10px;
     }
+}
 
 @media only screen and (max-width: 500px) {
 /* mobile responsive */
@@ -1150,7 +1151,7 @@ body {
     }
 
     .instagram-link a {
-        font-size: 1.3em;
+        font-size: 1em;
     }
 
     @supports (display: grid){
@@ -1203,7 +1204,6 @@ body {
     .header-animation {
         height: 300px;
     }
-}
 
 /* main */
     .instapic {
