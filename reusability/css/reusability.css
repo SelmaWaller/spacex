@@ -71,6 +71,13 @@ body {
     transform: translate(-50%, -50%); 
 }
 
+.intro-fade {
+    position: absolute;
+    background: rgba(20, 20, 20, 0.5);
+    height: 100%;
+    animation: none;
+}
+
 /* main text */
 .intro-text {
     padding: 70px 0 20px 20px;
