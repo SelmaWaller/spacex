@@ -149,31 +149,6 @@ body {
     }
 }
 
-/* videos */
-.video {
-    margin: 20px;
-    border-radius: 3px;
-    position: relative;
-    border: none;
-}
-
-.video figure {
-    margin: 0;
-}
-
-iframe {
-    width: 100%;
-    border: none;
-}
-
-.videos h2 {
-    margin-bottom: 0;
-    font-family: 'Work Sans', sans-serif;
-    font-size: 2em;
-    padding-left: 20px;
-    animation: none;
-}
-
 @media only screen and (max-width: 1024px) {
 /* laptop responsive */
     .section-background h1 {
@@ -210,13 +185,8 @@ iframe {
         margin-bottom: 0;
     }
 
-    .header-text #upcoming-launches,
-    .videos h2 {
+    .header-text #upcoming-launches {
         font-size: 1.6em;
-    }
-
-    .videos h2 {
-        padding-top: 30px;
     }
 
     #upcoming-launches {
